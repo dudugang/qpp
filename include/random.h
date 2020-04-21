@@ -532,6 +532,25 @@ inline std::vector<double> randprob(idx N) {
     return result;
 }
 
+/**
+ *\brief Generates a random boolean drawn from a Bernoulli-\f$p\f$ distribution
+ *\note Outputs always false for \a p == 0, and always true for \a p == 1
+ *
+ * \param p Probability bias (0.5 by default)
+ * \return Boolean drawn from a Bernoulli-\f$p\f$ distribution
+ */
+inline bool bernoulli(double p = 0.5) {
+    std::bernoulli_distribution bd(p);
+    auto& gen =
+#ifdef NO_THREAD_LOCAL_
+        RandomDevices::get_instance().get_prng();
+#else
+        RandomDevices::get_thread_local_instance().get_prng();
+#endif
+
+    return bd(gen);
+}
+
 } /* namespace qpp */
 
 #endif /* RANDOM_H_ */

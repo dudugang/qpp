@@ -1,5 +1,6 @@
 Pre-release
-    -
+    - added qpp::bernoulli() in "random.h" for generating Bernoulli-p random
+      booleans
 
 Version 2.2 - 14 April 2020
     - Updated Google Test to version 1.10.0

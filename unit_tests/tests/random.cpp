@@ -7,6 +7,9 @@ using namespace qpp;
 // Unit testing "random.h"
 
 /******************************************************************************/
+/// BEGIN inline bool qpp::bernoulli(double p = 0.5)
+TEST(qpp_bernoulli, AllTests) {}
+/******************************************************************************/
 /// BEGIN inline bigint qpp::rand(bigint a, bigint b)
 TEST(qpp_rand, Integer) {
     // 1 element equal boundaries
